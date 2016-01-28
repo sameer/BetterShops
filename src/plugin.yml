@@ -1,0 +1,193 @@
+name: BetterShops
+main: max.hubbard.bettershops.Core
+version: 2.1.2
+author: moomaxie
+softdepend: [WorldGuard, Vault, HolographicDisplays, Citizens]
+description: >
+             Better Shops Plugin
+commands:
+   BS:
+      description: The Main BetterShops command
+      usage: /<command>
+
+permissions:
+    bettershops.shop.*:
+        description: Gives access to all BetterShops Features
+        children:
+            bettershops.shop.create: true
+            bettershops.shop.limit: true
+            bettershops.shop.infinite: true
+            bettershops.shop.owneruse: true
+            bettershops.shop.NPC: true
+            bettershops.shop.creationcost: true
+            bettershops.shop.break: true
+            bettershops.shop.liveeco: true
+            bettershops.shop.holograms: true
+            bettershops.shop.arrange: true
+            bettershops.shop.blacklist: true
+            bettershops.shop.playerblacklist: true
+            bettershops.shop.autostock: true
+            bettershops.npc.*: true
+            bettershops.command.*: true
+            bettershops.buy.*: true
+            bettershops.sell.*: true
+            bettershops.edit.*: true
+            bettershops.sign.*: true
+    bettershops.shop.create:
+        description: Allows you to create shops
+        default: true
+    bettershops.shop.limit:
+        description: Allows unlimited shops
+        default: op
+    bettershops.shop.infinite:
+        description: Allows infinite stock
+        default: op
+    bettershops.shop.owneruse:
+        description: Allows ability to create Server Shops
+        default: op
+    bettershops.shop.NPC:
+        description: Allows ability to create NPC Shops
+        default: op
+    bettershops.shop.break:
+        description: Allows ability to break shops
+        default: op
+    bettershops.shop.creationcost:
+        description: Allows ability to bypass creation costs
+        default: op
+    bettershops.shop.liveeco:
+        description: Allows ability to use Live Economy
+        default: true
+    bettershops.shop.holograms:
+        description: Allows ability to create Holographic Shops
+        default: op
+    bettershops.shop.arrange:
+        description: Allows ability to Arrange Shops
+        default: true
+    bettershops.shop.blacklist:
+        description: Allows ability to bypass the blacklist
+        default: op
+    bettershops.shop.playerblacklist:
+        description: Allows ability to use the player blacklist
+        default: true
+    bettershops.shop.autostock:
+        description: Allows ability to use auto stock
+        default: op
+    bettershops.buy.*:
+        description: Access to buy all items
+        default: true
+    bettershops.sell.*:
+        description: Access to sell all items
+        default: true
+    bettershops.edit.*:
+        description: Allows ability to edit all shops
+        default: op
+    bettershops.sign.*:
+        description: Access to all sign permissions
+        default: op
+    bettershops.sign.create:
+        description: Allows creation of sign shops
+        default: true
+    bettershops.sign.admin:
+        description: Allows creation admin sign shops
+        default: op
+    bettershops.command.*:
+        description: Access to all BetterShops Commands
+        default: op
+        children:
+            bettershops.command.update: true
+            bettershops.command.config: true
+            bettershops.command.language: true
+            bettershops.command.open: true
+            bettershops.command.remove: true
+            beetershops.command.move: true
+            bettershops.command.blacklist: true
+            bettershops.command.list: true
+            bettershops.command.open.*: true
+    bettershops.command.update:
+        description: Allows ability to use the /bs update command
+        default: op
+    bettershops.command.config:
+        description: Allows ability to use the Config GUI
+        default: op
+    bettershops.command.language:
+        description: Allows ability to use the Language GUI
+        default: op
+    bettershops.command.move:
+        description: Allows ability to use the /bs move <Shop> command
+        default: true
+    bettershops.command.open:
+        description: Allows ability to use the /bs open <Shop> command
+        default: op
+    bettershops.command.list:
+        description: Allows ability to use the /bs list <Player> command
+        default: true
+    bettershops.command.remove:
+        description: Allows ability to use the /bs remove <Shop> command
+        default: true
+    bettershops.command.blacklist:
+        description: Allows ability to use the /bs blacklist command
+        default: op
+    bettershops.command.open.*:
+        description: Allows ability to open any shop no matter the world
+        default: true
+    bettershops.npc.*:
+        description: Access to all NPC types
+        default: op
+        children:
+            bettershops.npc.villager: true
+            bettershops.npc.cavespider: true
+            bettershops.npc.chicken: true
+            bettershops.npc.cow: true
+            bettershops.npc.horse: true
+            bettershops.npc.irongolem: true
+            bettershops.npc.magmacube: true
+            bettershops.npc.mushroomcow: true
+            bettershops.npc.ocelot: true
+            bettershops.npc.pig: true
+            bettershops.npc.pigzombie: true
+            bettershops.npc.sheep: true
+            bettershops.npc.silverfish: true
+            bettershops.npc.skeleton: true
+            bettershops.npc.slime: true
+            bettershops.npc.snowman: true
+            bettershops.npc.spider: true
+            bettershops.npc.wolf: true
+            bettershops.npc.zombie: true
+    bettershops.npc.villager:
+        default: true
+    bettershops.npc.cavespider:
+        default: op
+    bettershops.npc.chicken:
+        default: op
+    bettershops.npc.cow:
+        default: op
+    bettershops.npc.horse:
+        default: op
+    bettershops.npc.irongolem:
+        default: op
+    bettershops.npc.magmacube:
+        default: op
+    bettershops.npc.mushroomcow:
+        default: op
+    bettershops.npc.ocelot:
+        default: op
+    bettershops.npc.pig:
+        default: op
+    bettershops.npc.pigzombie:
+        default: op
+    bettershops.npc.sheep:
+        default: op
+    bettershops.npc.silverfish:
+        default: op
+    bettershops.npc.skeleton:
+        default: op
+    bettershops.npc.slime:
+        default: op
+    bettershops.npc.snowman:
+        default: op
+    bettershops.npc.spider:
+        default: op
+    bettershops.npc.wolf:
+        default: op
+    bettershops.npc.zombie:
+        default: op
