@@ -71,7 +71,8 @@ public class Opener implements Listener {
     public void onInteract(final PlayerInteractEvent e) {
         if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
             Block b = e.getClickedBlock();
-            if (b.getType() == Material.AIR) return;
+            
+            try { if (b.getType() == Material.AIR) return; } catch (Exception ex) { return; }
             if (b.getType() == Material.CHEST || b.getType() == Material.TRAPPED_CHEST) {
 
                 final Player p = e.getPlayer();
