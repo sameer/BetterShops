@@ -69,9 +69,9 @@ public class Opener implements Listener {
 
     @EventHandler
     public void onInteract(final PlayerInteractEvent e) {
-        if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+        if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
             Block b = e.getClickedBlock();
-
+            if (b.getType() == Material.AIR) return;
             if (b.getType() == Material.CHEST || b.getType() == Material.TRAPPED_CHEST) {
 
                 final Player p = e.getPlayer();
@@ -107,7 +107,7 @@ public class Opener implements Listener {
                         }
                     });
                 }
-            } else if (b.getType() == Material.WALL_SIGN) {
+            } else if (b.getType() == Material.SIGN || b.getType() == Material.WALL_SIGN || b.getType() == Material.SIGN_POST) {
                 Sign sign = (Sign) b.getState();
                 final Player p = e.getPlayer();
 
