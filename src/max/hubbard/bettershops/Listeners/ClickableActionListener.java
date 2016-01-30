@@ -29,7 +29,11 @@ public class ClickableActionListener implements Listener {
 
     @EventHandler
     public void onClick(final InventoryClickEvent e) {
-        if (e.getInventory().getName().contains(Language.getString("MainGUI", "ShopHeader"))) {
+        if(e.getInventory() == null)return;
+        String lang =  Language.getString("MainGUI", "ShopHeader");
+        String name = e.getInventory().getName();
+        if(lang == null || name == null)return;
+        if (name.contains(lang)) {
             if (e.getCurrentItem() != null && e.getCurrentItem().getType() != Material.AIR) {
                 e.setCancelled(true);
                 final Player p = (Player) e.getWhoClicked();
