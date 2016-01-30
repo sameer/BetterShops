@@ -337,7 +337,7 @@ public class TradeManager implements ShopMenu {
                     public void run() {
                         String na = man.call();
                         List<Material> mat = MaterialSearch.closestMaterial(na);
-
+                        
                         List<ItemStack> items = trade.getRecievingItems();
 
                         ItemStack t = null;
@@ -350,9 +350,9 @@ public class TradeManager implements ShopMenu {
                                 break;
                             }
                         }
-
                         if (t == null) {
-                            items.add(new ItemStack(mat.get(0)));
+                            try{
+                            items.add(new ItemStack(mat.get(0)));} catch(Exception e){}
                         } else {
                             items.add(t);
                         }
